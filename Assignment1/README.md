@@ -1,22 +1,24 @@
 # Deep Vision
 
-### This folder gives an introduction to the basic terminologies for Deep Learning (focus towards vision). Also consists of the code to understand the working of various edge detectors (kernels).
+#### This folder gives an introduction to the basic terminologies for Deep Learning (focus towards vision). Also consists of the code to understand the working of various edge detectors (kernels).
 
 
 
-1. What is a Channel?
+#### Channel?
 
-If you take a bag of mixed color balls say black and white. A channel could be the set of black balls or the white balls, when classified based on color.So in simple words, channel is like a container of similar features. Now what is feature? It's the property of the component, in this case it's black color of the ball.  A channel stores not only the property but also location of the component.
+Let's start with an example, If you take a bag of mixed color balls say black and white. A channel could be the set of black balls or the white balls, when classified based on color.So in simple words, channel is like a container of similar features. Now what is feature? It's the property of the component, in this case it's black color of the ball.  A channel stores not only the property but also location of the component.
  
-2. Why should we only (well mostly) use 3x3 Kernels?
+#### Why only (well mostly) use 3x3 Kernels?
 
-The kernerls are the agents that help us to 3x3,since uses 9 parameters, is faster compared to the 5x5 or any higher kernel.A higher number say 5x5 could be easily achieved using 3x3 twice, thrice for 7x7 and so on. For example, 9x9 has 81 parameters which requires way more sophisticated infrastructure. All the above kernels are odd, so why not even? Even suffers from one serious point that is the axis of symmetry. 
+The kernels are the agents that help us to extract the feature from the image to the channel.3x3,since uses 9 parameters, is faster compared to the 5x5 or any higher kernel.A higher number say 5x5 could be easily achieved using 3x3 twice, thrice for 7x7 and so on. For example, 9x9 has 81 parameters which requires way more sophisticated infrastructure. All the above kernels are odd, so why not even? Even suffers from one serious point that is the axis of symmetry. 
 ![3x3 Kernel](https://github.com/Venu2791/Deep-Vision/blob/master/Assignment1/Pics.png).
 
-Visual working of the 3x3 kernel is shown in this ![link](http://setosa.io/ev/image-kernels/).
+Visual working of the 3x3 kernel is shown in this ![link](http://setosa.io/ev/image-kernels/). 
+If the link is down, try this URL:http://setosa.io/ev/image-kernels/
+
  
 
-3. How many times do we need to perform 3x3 convolution operation to reach 1x1 from 199x199 (show calculations)?
+#### How many times do we need to perform 3x3 convolution operation to reach 1x1 from 199x199 (show calculations)?
 
 We start with an image of size 400x400, and everytime we add a conv operation, the output channel size reduces by 2 pixels.
 So we end with 99 Layers to make the Global Receptive field equal to that of image.
